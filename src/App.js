@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
+import Recipe from './components/Recipe';
 import Landing from './components/Landing';
 import Login from './components/Login';
 import './App.css';
