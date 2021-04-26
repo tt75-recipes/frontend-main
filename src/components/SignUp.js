@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import axios from "axios";
+import axios from "axios";
 
 const initialState = {
   name: "",
@@ -18,8 +18,15 @@ export default function Signup() {
 
   const onSubmit = (evt) => {
     evt.preventDefault();
-    // axios post here
-  };
+    axios.post(`https://tt75-recipes.herokuapp.com/api/auth/signup`, info)
+    .then((res) => {
+        console.log(res);
+        //TODO: actually send something
+        // TODO: navigate to recipes
+      })
+      .catch((err) => {
+        console.log(err);
+      }) };
 
   return (
     <section className="signup">
@@ -76,7 +83,7 @@ export default function Signup() {
         </label>
         <button> Sign Up </button>
       </form>
-      
+
       <br></br>
       <br></br>
       <br></br>
