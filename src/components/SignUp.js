@@ -8,8 +8,6 @@ const initialState = {
   password: "",
 };
 
-const initialData = [];
-
 export default function Signup() {
   const [info, setInfo] = useState(initialState);
 
@@ -24,8 +22,14 @@ export default function Signup() {
   };
 
   return (
-    <div>
-      <h2> Sign Up </h2>
+    <section className="signup">
+      <h1> Sign Up </h1>
+
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+
       <form onSubmit={onSubmit}>
         <label>
           Email
@@ -72,9 +76,15 @@ export default function Signup() {
         </label>
         <button> Sign Up </button>
       </form>
+      
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+
       <p>
-        Already have an account? <a href="#"> Login </a>
+        Already have an account? <a href="/login"> Login </a>
       </p>
-    </div>
+    </section>
   );
 }

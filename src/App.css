@@ -152,3 +152,59 @@ div {
   background-color: white;
   color: #8383a3;
 }
+
+.signup {
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  background-color: white;
+  width:40%;
+  height: 100%;
+  float: right;
+  padding-top: 100px;
+  padding-left: 25px;
+  text-align: left;
+  font-family: 'Quattrocento', serif;
+}
+
+.signup h1 {
+  font-family: 'Miriam Libre', sans-serif;
+}
+
+.signup form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 500px;
+  height: 400px;
+}
+
+.signup label {
+  font-family: 'Quattrocento', serif;
+}
+
+.signup input {
+  height: 70px;
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: #bcc4cc;
+  font-size: 2.5em;
+  margin-bottom: 25px;
+}
+.signup input:focus {
+  border-color: #747474;
+}
+
+.signup button {
+  background-color:#8383a3;
+  color: white;
+  height: 50px;
+  width: 25%;
+  border-radius: 25px;
+  margin-left: 50px;
+}
+
+.signup button:hover {
+  background-color: white;
+  color: #8383a3;
+}
