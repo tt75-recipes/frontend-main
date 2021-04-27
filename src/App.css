@@ -180,15 +180,18 @@ div {
   width: 40%;
   height: 100%;
   float: right;
-  padding-top: 100px;
+  padding-top: 50px;
   padding-left: 25px;
   text-align: left;
-  font-family: "Quattrocento", serif;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2em;
+  font-weight: 500;
 }
 
 .signup h1 {
-  font-family: "fredericka the great";
-  /* 'Miriam Libre', sans-serif; */
+  font-family: 'Fredericka the Great', sans-serif;
+  font-weight: 250;
+  font-size: 3em;
 }
 
 .signup form {
@@ -197,12 +200,11 @@ div {
   justify-content: center;
   width: 500px;
   height: 400px;
+  font-family: 'Josefin Slab', serif
 }
 
 .signup label {
-  font-family: josefin-slab, serif;
-  font-weight: 700;
-  font-style: normal;
+  font-family: 'Josefin Slab', serif;
 }
 
 .signup input {
@@ -212,9 +214,6 @@ div {
   border-color: #bcc4cc;
   font-size: 2.5em;
   margin-bottom: 25px;
-  font-family: garamond-premier-pro-caption, serif;
-  font-weight: 400;
-  font-style: normal;
 }
 .signup input:focus {
   border-color: #747474;
@@ -224,9 +223,13 @@ div {
   background-color: #8383a3;
   color: white;
   height: 50px;
-  width: 30%;
+  width: 200px;
   border-radius: 25px;
-  margin-left: 50px;
+  margin-top: 50px;
+  margin-left: 25px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1em;
+  font-weight: 500;
 }
 
 .signup button:hover {
