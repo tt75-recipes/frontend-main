@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Satisfy&family=Smythe&family=Quattrocento&family=Miriam+Libre&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&family=Smythe&family=Quattrocento&family=Miriam+Libre&display=swap");
 /* @import url('https://fonts.googleapis.com/css2?family=Quattrocento&display=swap'); */
 
 .App {
@@ -50,7 +50,6 @@ a:hover {
 
 div {
   height: 100%;
-
 }
 
 .landing {
@@ -60,12 +59,11 @@ div {
 }
 
 .landing h1 {
-  font-family: 'Satisfy', cursive;
+  font-family: "Satisfy", cursive;
 }
 
 .landing-links {
-  
-  font-family: 'Courier New', monospace;
+  font-family: "Courier New", monospace;
   font-weight: 800;
   display: flex;
   width: 650px;
@@ -84,7 +82,7 @@ div {
   margin: 30px;
   padding: 10px;
   width: calc(50% - 40px /* subtracts margins */);
-  min-width:153px;
+  min-width: 153px;
   height: 20px;
   text-align: center;
   border-radius: 25px;
@@ -102,17 +100,17 @@ div {
   flex-direction: column;
   justify-content: top;
   background-color: white;
-  width:40%;
+  width: 40%;
   height: 100%;
   float: right;
   padding-top: 100px;
   padding-left: 25px;
   text-align: left;
-  font-family: 'Quattrocento', serif;
+  font-family: "Quattrocento", serif;
 }
 
 .login h1 {
-  font-family: 'Miriam Libre', sans-serif;
+  font-family: "Miriam Libre", sans-serif;
 }
 
 .login form {
@@ -124,7 +122,7 @@ div {
 }
 
 .login label {
-  font-family: 'Quattrocento', serif;
+  font-family: "Quattrocento", serif;
 }
 
 .login input {
@@ -140,7 +138,7 @@ div {
 }
 
 .login button {
-  background-color:#8383a3;
+  background-color: #8383a3;
   color: white;
   height: 50px;
   width: 200px;
@@ -158,17 +156,17 @@ div {
   flex-direction: column;
   justify-content: top;
   background-color: white;
-  width:40%;
+  width: 40%;
   height: 100%;
   float: right;
   padding-top: 100px;
   padding-left: 25px;
   text-align: left;
-  font-family: 'Quattrocento', serif;
+  font-family: "Quattrocento", serif;
 }
 
 .signup h1 {
-  font-family: "fredericka the great", sans-serif; 
+  font-family: "fredericka the great";
   /* 'Miriam Libre', sans-serif; */
 }
 
@@ -181,7 +179,9 @@ div {
 }
 
 .signup label {
-  font-family: 'Quattrocento', serif;
+  font-family: josefin-slab, serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
 .signup input {
@@ -191,13 +191,16 @@ div {
   border-color: #bcc4cc;
   font-size: 2.5em;
   margin-bottom: 25px;
+  font-family: garamond-premier-pro-caption, serif;
+  font-weight: 400;
+  font-style: normal;
 }
 .signup input:focus {
   border-color: #747474;
 }
 
 .signup button {
-  background-color:#8383a3;
+  background-color: #8383a3;
   color: white;
   height: 50px;
   width: 30%;

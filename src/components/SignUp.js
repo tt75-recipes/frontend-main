@@ -39,18 +39,20 @@ export default function Signup() {
 
       <form onSubmit={onSubmit}>
         <label>
-          Email
+          Name
+          <br></br>
           <input
-            name="email"
-            type="email"
-            value={info.email}
+            name="name"
+            type="text"
+            value={info.name}
             onChange={onChange}
-            placeholder="Email..."
+            placeholder="Name..."
           />
         </label>
 
         <label>
           Phone
+          <br></br>
           <input
             name="phone"
             type="text"
@@ -62,6 +64,7 @@ export default function Signup() {
 
         <label>
           Username
+          <br></br>
           <input
             name="username"
             type="text"
@@ -73,6 +76,7 @@ export default function Signup() {
 
         <label>
           Password
+          <br></br>
           <input
             name="password"
             type="password"
