@@ -7,7 +7,7 @@
 /* Garamond Premier Pro Caption is an Adobe license font */
 /* @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap'); */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Fredericka+the+Great&family=Josefin+Slab&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Fredericka+the+Great&family=Josefin+Slab&display=swap");
 
 .App {
   text-align: center;
@@ -48,7 +48,6 @@
   }
 }
 
-
 /* 
 Blue : #8586A5
 DarkGrey: #707070
@@ -74,7 +73,7 @@ div {
 }
 
 .landing-links {
-  font-family: 'Courier New', monospace;
+  font-family: "Courier New", monospace;
   font-weight: 800;
   display: flex;
   width: 650px;
@@ -117,13 +116,13 @@ div {
   padding-top: 50px;
   padding-left: 25px;
   text-align: left;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Cormorant Garamond", serif;
   font-size: 1.2em;
   font-weight: 500;
 }
 
 .login h1 {
-  font-family: 'Fredericka the Great', sans-serif;
+  font-family: "Fredericka the Great", sans-serif;
   font-weight: 250;
   font-size: 3em;
 }
@@ -134,11 +133,11 @@ div {
   justify-content: center;
   width: 500px;
   height: 400px;
-  font-family: 'Josefin Slab', serif
+  font-family: "Josefin Slab", serif;
 }
 
 .login label {
-  font-family: 'Josefin Slab', serif;
+  font-family: "Josefin Slab", serif;
 }
 
 .login input {
@@ -162,7 +161,7 @@ div {
   border-radius: 25px;
   margin-top: 50px;
   margin-left: 25px;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Cormorant Garamond", serif;
   font-size: 1em;
   font-weight: 500;
 }
@@ -183,13 +182,13 @@ div {
   padding-top: 50px;
   padding-left: 25px;
   text-align: left;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Cormorant Garamond", serif;
   font-size: 1.2em;
   font-weight: 500;
 }
 
 .signup h1 {
-  font-family: 'Fredericka the Great', sans-serif;
+  font-family: "Fredericka the Great", sans-serif;
   font-weight: 250;
   font-size: 3em;
 }
@@ -200,11 +199,11 @@ div {
   justify-content: center;
   width: 500px;
   height: 400px;
-  font-family: 'Josefin Slab', serif
+  font-family: "Josefin Slab", serif;
 }
 
 .signup label {
-  font-family: 'Josefin Slab', serif;
+  font-family: "Josefin Slab", serif;
 }
 
 .signup input {
@@ -227,7 +226,7 @@ div {
   border-radius: 25px;
   margin-top: 50px;
   margin-left: 25px;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Cormorant Garamond", serif;
   font-size: 1em;
   font-weight: 500;
 }

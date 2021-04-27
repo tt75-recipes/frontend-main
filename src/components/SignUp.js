@@ -18,15 +18,17 @@ export default function Signup() {
 
   const onSubmit = (evt) => {
     evt.preventDefault();
-    axios.post(`https://tt75-recipes.herokuapp.com/api/auth/signup`, info)
-    .then((res) => {
+    axios
+      .post(`https://tt75-recipes.herokuapp.com/api/auth/signup`, info)
+      .then((res) => {
         console.log(res);
         //TODO: actually send something
         // TODO: navigate to recipes
       })
       .catch((err) => {
         console.log(err);
-      }) };
+      });
+  };
 
   return (
     <section className="signup">
