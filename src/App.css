@@ -163,6 +163,9 @@ div {
   border-radius: 25px;
   margin-top: 50px;
   margin-left: 25px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1em;
+  font-weight: 500;
 }
 
 .login button:hover {
