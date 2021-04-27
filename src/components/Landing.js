@@ -10,14 +10,14 @@ export default function Landing() {
   const [radio, setRadio] = useState('');
 
   const filteredRecipes = recipes.filter(recipe => {
-    if (recipe.title.toLowerCase().includes(search.toLowerCase()))
-      return true;
+    if (recipe.title.toLowerCase().includes(search.toLowerCase())) return true;
+    return false;
   })
 
   useEffect(() => {
     const token = window.localStorage.getItem('token');
     if (token) setTokenExists(true);
-    console.log(localStorage);
+    (token && console.log(JSON.parse(token)));
 
     if (token) {
       axios.get('https://tt75-recipes.herokuapp.com/api/categories')
@@ -63,10 +63,6 @@ export default function Landing() {
                 return (
                   <div className='recipe-card'>
                     <h2>Title:</h2> <p>{recipe.title}</p>
-                    <h3>Source:</h3> <p>{recipe.source}</p>
-                    <h3>Instructions:</h3> <p>{recipe.instructions}</p>
-                    <h3>Ingredients:</h3> <p>{recipe.ingredients}</p>
-                    <h3>Category:</h3> <p>{recipe.category}</p>
                   </div>
                 )
               })
