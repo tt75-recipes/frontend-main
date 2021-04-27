@@ -15,10 +15,7 @@ const NewRecipe = () => {
         source: '',
         category: '',
         directions: '',
-        ingredients: [{name: '',
-        measurement: '',
-        unit: '',
-        }]
+        ingredients: [""]
     }
 
     const initialForm = {
@@ -26,10 +23,7 @@ const NewRecipe = () => {
         source: '',
         category: '',
         directions: '',
-        ingredients: [{name: '',
-        measurement: '',
-        unit: '',
-        }]
+        ingredients: [""]
     }
 
     const initialFormErrors = {
@@ -37,10 +31,7 @@ const NewRecipe = () => {
         source: '',
         category: '',
         directions: '',
-        ingredients: [{name: '',
-        measurement: '',
-        unit: '',
-        }]
+        ingredients: [""]
     }
 
     const initialDisabled = true;
@@ -57,7 +48,7 @@ const NewRecipe = () => {
 
 return (
     <>
-    New Recipe Form
+    New Recipe Form ..
     </>
 )
 
