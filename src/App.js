@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Landing from './components/Landing';
 import Login from './components/Login';
 import Signup from './components/SignUp'
+import NavBar from './components/NavBar';
 import './App.css';
 
 function App() {
@@ -19,6 +20,10 @@ function App() {
           </Route>
           <Route path='/signup'>
             <Signup />
+            </Route>
+          {/* testing */}
+          <Route path='/nav'>
+            <NavBar />
           </Route>
         </Switch>
       </Router>

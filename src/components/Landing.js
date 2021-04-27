@@ -11,11 +11,11 @@ export default function Landing() {
         <div style={{height:'200px', width: '500px', margin: 'auto'}} >
           <Logo_Large />
         </div>
+      </div>
         <div className='landing-links'>
           <a href='/signup'>Sign Up</a>
           <a href='/login'>Login</a>
         </div>
-      </div>
     </>
   );
 
