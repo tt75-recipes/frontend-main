@@ -187,7 +187,7 @@ div {
   padding: 5px;
   margin: 15px;
   
-  /* border: 1px solid black; */
+  border: 1px solid black;
 }
 
 .navbar a:hover {
@@ -197,8 +197,13 @@ div {
 .navbar .logout a {
   background-color: #8586A5;
   color: white;
-  margin: 15px;
+  height: 30px;
+  /* margin: 10px; */
+  height: 30%;
   border-radius: 25px;
+  padding: 5px 0;
+  text-align: center;
+  /* border: 1px solid black; */
 }
 
 
