@@ -1,12 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Satisfy&family=Smythe&family=Quattrocento&family=Miriam+Libre&display=swap'); */
-/* @import url('https://fonts.googleapis.com/css2?family=Quattrocento&display=swap'); */
-/* @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Josefin+Slab&display=swap'); */
-/* @import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@700&display=swap'); */
-
-/* @import url('https://fonts.googleapis.com/css2?family=Josefin+Slab&display=swap'); */
 /* Garamond Premier Pro Caption is an Adobe license font */
-/* @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap'); */
-
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Fredericka+the+Great&family=Josefin+Slab&display=swap');
 
 .App {
@@ -180,20 +172,37 @@ div {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
+  font-family: 'Courier New', monospace;
+  font-weight: 700;
+  text-decoration: bold;
   /* border: 1px solid black; */
-
 }
 
 .navbar a {
   display: flex;
   flex-direction: row;
+  color: #8586A5;
   justify-content: space-evenly;
-  width: 250px;
+  width: 150px;
   padding: 5px;
-  margin: 10px auto;
-  border: 1px solid black;
+  margin: 15px;
+  
+  /* border: 1px solid black; */
+}
 
+.navbar a:hover {
+  text-decoration: none;
+}
+
+.navbar .logout a {
+  background-color: #8586A5;
+  color: white;
+  margin: 15px;
+  border-radius: 25px;
 }
 
 
+.navbar .logout a:hover {
+  background-color: white;
+  color: #8586A5;
+}
