@@ -32,7 +32,7 @@ export default function Landing() {
   const handleSearch = e => setSearch({ ...search, [e.target.name]: e.target.value });
   const handleRadio = e => setRadio({ ...radio, [e.target.name]: e.target.value });
 
-  if (!tokenExists) {
+  if (tokenExists) {
     return (
       <div className='landing'>
         <h1>Secret Family Recipes</h1>
