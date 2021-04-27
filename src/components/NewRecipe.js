@@ -57,7 +57,7 @@ const NewRecipe = () => {
 
 return (
     <>
-
+    New Recipe Form
     </>
 )
 
