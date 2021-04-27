@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+//import '../styles/landing.css'; // we talked about styled-components, but nothing concrete yet -- using plain css for now, can easily change later
 
 export default function Landing() {
   const [categories, setCategories] = useState([]);
@@ -14,7 +15,7 @@ export default function Landing() {
     <div className='landing'>
       <h1>Secret Family Recipes</h1>
       <nav className='landing-links'>
-        <a href='/signup'>Sign Up</a>
+        <a href='/register'>Register</a>
         <a href='/login'>Login</a>
       </nav>
     </div>
