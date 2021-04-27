@@ -44,6 +44,8 @@ export default class Login extends React.Component {
               name="username"
               value={this.state.credentials.username}
               onChange={this.handleChange}
+              spellCheck='false'
+              autoComplete='off'
             />
           </>
           <>
