@@ -1,5 +1,5 @@
 /* Garamond Premier Pro Caption is an Adobe license font */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Fredericka+the+Great&family=Josefin+Slab&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Fredericka+the+Great&family=Josefin+Slab&display=swap");
 
 .App {
   text-align: center;
@@ -196,6 +196,7 @@ div {
 
 .signup label {
   font-family: "Josefin Slab", serif;
+  font-weight: 700;
 }
 
 .signup input {
@@ -205,6 +206,10 @@ div {
   border-color: #bcc4cc;
   font-size: 2.5em;
   margin-bottom: 25px;
+  color: #cacaca;
+  font-family: garamond-premier-pro-caption, serif;
+  font-weight: 400;
+  font-style: normal;
 }
 .signup input:focus {
   border-color: #747474;
@@ -234,7 +239,7 @@ div {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  font-family: 'Courier New', monospace;
+  font-family: "Courier New", monospace;
   font-weight: 700;
   text-decoration: bold;
   /* border: 1px solid black; */
@@ -243,12 +248,12 @@ div {
 .navbar a {
   display: flex;
   flex-direction: row;
-  color: #8586A5;
+  color: #8586a5;
   justify-content: space-evenly;
   width: 150px;
   padding: 5px;
   margin: 15px;
-  
+
   /* border: 1px solid black; */
 }
 
@@ -257,14 +262,13 @@ div {
 }
 
 .navbar .logout a {
-  background-color: #8586A5;
+  background-color: #8586a5;
   color: white;
   margin: 15px;
   border-radius: 25px;
 }
 
-
 .navbar .logout a:hover {
   background-color: white;
-  color: #8586A5;
+  color: #8586a5;
 }
