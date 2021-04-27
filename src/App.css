@@ -1,5 +1,5 @@
 /* Garamond Premier Pro Caption is an Adobe license font */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Fredericka+the+Great&family=Josefin+Slab&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Fredericka+the+Great&family=Josefin+Slab&display=swap");
 
 .App {
   text-align: center;
@@ -40,7 +40,6 @@
   }
 }
 
-
 /* 
 Blue : #8586A5
 DarkGrey: #707070
@@ -56,7 +55,6 @@ a:hover {
 
 div {
   height: 100%;
-
 }
 
 .landing {
@@ -67,7 +65,7 @@ div {
 }
 
 .landing-links {
-  font-family: 'Courier New', monospace;
+  font-family: "Courier New", monospace;
   font-weight: 800;
   display: flex;
   width: 650px;
@@ -86,7 +84,7 @@ div {
   margin: 30px;
   padding: 10px;
   width: calc(50% - 40px /* subtracts margins */);
-  min-width:153px;
+  min-width: 153px;
   height: 20px;
   text-align: center;
   border-radius: 25px;
@@ -104,19 +102,19 @@ div {
   flex-direction: column;
   justify-content: top;
   background-color: white;
-  width:40%;
+  width: 40%;
   height: 100%;
   float: right;
   padding-top: 50px;
   padding-left: 25px;
   text-align: left;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Cormorant Garamond", serif;
   font-size: 1.2em;
   font-weight: 500;
 }
 
 .login h1 {
-  font-family: 'Fredericka the Great', sans-serif;
+  font-family: "Fredericka the Great", sans-serif;
   font-weight: 250;
   font-size: 3em;
 }
@@ -127,11 +125,11 @@ div {
   justify-content: center;
   width: 500px;
   height: 400px;
-  font-family: 'Josefin Slab', serif
+  font-family: "Josefin Slab", serif;
 }
 
 .login label {
-  font-family: 'Josefin Slab', serif;
+  font-family: "Josefin Slab", serif;
 }
 
 .login input {
@@ -148,14 +146,14 @@ div {
 }
 
 .login button {
-  background-color:#8383a3;
+  background-color: #8383a3;
   color: white;
   height: 50px;
   width: 200px;
   border-radius: 25px;
   margin-top: 50px;
   margin-left: 25px;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Cormorant Garamond", serif;
   font-size: 1em;
   font-weight: 500;
 }
@@ -165,6 +163,75 @@ div {
   color: #8383a3;
 }
 
+.signup {
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  background-color: white;
+  width: 40%;
+  height: 100%;
+  float: right;
+  padding-top: 50px;
+  padding-left: 25px;
+  text-align: left;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+.signup h1 {
+  font-family: "Fredericka the Great", sans-serif;
+  font-weight: 250;
+  font-size: 3em;
+}
+
+.signup form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 500px;
+  height: 400px;
+  font-family: "Josefin Slab", serif;
+}
+
+.signup label {
+  font-family: "Josefin Slab", serif;
+  font-weight: 700;
+}
+
+.signup input {
+  height: 70px;
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: #bcc4cc;
+  font-size: 2.5em;
+  margin-bottom: 25px;
+  color: #cacaca;
+  font-family: garamond-premier-pro-caption, serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.signup input:focus {
+  border-color: #747474;
+}
+
+.signup button {
+  background-color: #8383a3;
+  color: white;
+  height: 50px;
+  width: 200px;
+  border-radius: 25px;
+  margin-top: 50px;
+  margin-left: 25px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1em;
+  font-weight: 500;
+}
+
+.signup button:hover {
+  background-color: white;
+  color: #8383a3;
+}
 .navbar {
   background-color: white;
   height: 60px;
@@ -172,7 +239,7 @@ div {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  font-family: 'Courier New', monospace;
+  font-family: "Courier New", monospace;
   font-weight: 700;
   text-decoration: bold;
   /* border: 1px solid black; */
@@ -181,12 +248,12 @@ div {
 .navbar a {
   display: flex;
   flex-direction: row;
-  color: #8586A5;
+  color: #8586a5;
   justify-content: space-evenly;
   width: 150px;
   padding: 5px;
   margin: 15px;
-  
+
   /* border: 1px solid black; */
 }
 
@@ -195,14 +262,13 @@ div {
 }
 
 .navbar .logout a {
-  background-color: #8586A5;
+  background-color: #8586a5;
   color: white;
   margin: 15px;
   border-radius: 25px;
 }
 
-
 .navbar .logout a:hover {
   background-color: white;
-  color: #8586A5;
+  color: #8586a5;
 }
