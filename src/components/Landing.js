@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../styles/landing.css';
+import { ReactComponent as Logo_Large } from '../images/logo_Large.svg'
 
 export default function Landing() {
   const [tokenExists, setTokenExists] = useState(false);
@@ -35,7 +36,9 @@ export default function Landing() {
   if (tokenExists) {
     return (
       <div className='landing'>
-        <h1>Secret Family Recipes</h1>
+        <div style={{height:'200px', width: '500px', margin: 'auto'}} >
+          <Logo_Large />
+        </div>
         <div className='container-search-recipes'>
           <aside className='searchbar'>
             <input onChange={handleSearch}
