@@ -97,113 +97,48 @@ div {
   background-color: #bcc4cc;
 }
 
-.login {
-  display: flex;
-  flex-direction: column;
-  justify-content: top;
+
+/* .navbar {
   background-color: white;
-  width: 40%;
-  height: 100%;
-  float: right;
-  padding-top: 50px;
-  padding-left: 25px;
-  text-align: left;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.2em;
-  font-weight: 500;
-}
-
-.login h1 {
-  font-family: "Fredericka the Great", sans-serif;
-  font-weight: 250;
-  font-size: 3em;
-}
-
-.login form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 500px;
-  height: 400px;
-  font-family: "Josefin Slab", serif;
-}
-
-.login label {
-  font-family: "Josefin Slab", serif;
-}
-
-.login input {
-  height: 70px;
-  outline: 0;
-  border-width: 0 0 2px;
-  border-color: #bcc4cc;
-  font-size: 2.5em;
-  margin-bottom: 25px;
-}
-
-.login input:focus {
-  border-color: #747474;
-}
-
-.login button {
-  background-color: #8383a3;
-  color: white;
-  height: 50px;
-  width: 200px;
-  border-radius: 25px;
-  margin-top: 50px;
-  margin-left: 25px;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1em;
-  font-weight: 500;
-}
-
-.login button:hover {
-  background-color: white;
-  color: #8383a3;
-}
-
-.navbar {
-  background-color: white;
-  height: 60px;
+  height: 60px; */
   /* padding: px; */
-  display: flex;
+  /* display: flex;
   flex-direction: row;
   justify-content: space-between;
   font-family: "Courier New", monospace;
   font-weight: 700;
-  text-decoration: bold;
+  text-decoration: bold; */
   /* border: 1px solid black; */
-}
+/* } */
 
-.navbar a {
+/* .navbar a {
   display: flex;
   flex-direction: row;
   color: #8586a5;
   justify-content: space-evenly;
   width: 150px;
   padding: 5px;
-  margin: 15px;
+  margin: 15px; */
   /* border: 1px solid black; */
-}
+/* } */
 
-.navbar a:hover {
+/* .navbar a:hover {
   text-decoration: none;
-}
+} */
 
-.navbar .logout a {
+/* .navbar .logout a {
   background-color: #8586a5;
   color: white;
-  height: 30px;
+  height: 30px; */
   /* margin: 10px; */
-  height: 30%;
+  /* height: 30%;
   border-radius: 25px;
   padding: 5px 0;
-  text-align: center;
+  text-align: center; */
   /* border: 1px solid black; */
-}
+/* } */
 
-.navbar .logout a:hover {
+/* .navbar .logout a:hover {
   background-color: white;
   color: #8586a5;
-}
+} */

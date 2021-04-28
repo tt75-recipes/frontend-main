@@ -38,9 +38,6 @@ export default function Signup() {
       <SignH1> Sign Up </SignH1>
 
       <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
 
       <SignForm onSubmit={onSubmit}>
         <SignLabel>
@@ -69,9 +66,6 @@ export default function Signup() {
         <SignButton> Sign Up </SignButton>
       </SignForm>
 
-      <br></br>
-      <br></br>
-      <br></br>
       <br></br>
 
       <p>
@@ -139,7 +133,7 @@ const SignButton = styled.button`
   height: 50px;
   width: 200px;
   border-radius: 25px;
-  margin-top: 50px;
+  margin-top: 40px;
   margin-left: 25px;
   font-family: "Cormorant Garamond", serif;
   font-size: 1em;
