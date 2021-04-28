@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from "react-router-dom";
-import axios from 'axios';
+import { axiosWithAuth } from '../axiosWithAuth.js';
 
 export default function Login() {
   const history = useHistory();
@@ -10,9 +10,8 @@ export default function Login() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    axios.post(`https://tt75-recipes.herokuapp.com/api/auth/login`, credentials)
+    axiosWithAuth().post(`https://tt75-recipes.herokuapp.com/api/auth/login`, credentials)
       .then((res) => {
-        console.log(res);
         window.localStorage.setItem('token', JSON.stringify(res.data.token));
         history.push('/');
       })

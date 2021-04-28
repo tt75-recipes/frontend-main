@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import axios from "axios";
+import { axiosWithAuth } from '../axiosWithAuth.js';
+import { useHistory } from "react-router-dom";
 
 const initialState = {
-  name: "",
-  phone: "",
   username: "",
   password: "",
 };
 
 export default function Signup() {
+  const history = useHistory();
   const [info, setInfo] = useState(initialState);
 
   const onChange = (evt) => {
@@ -18,16 +18,16 @@ export default function Signup() {
 
   const onSubmit = (evt) => {
     evt.preventDefault();
-    axios
-      .post(`https://tt75-recipes.herokuapp.com/api/auth/signup`, info)
+    axiosWithAuth().post(`https://tt75-recipes.herokuapp.com/api/auth/register`, info)
       .then((res) => {
-        console.log(res);
-        //TODO: actually send something
-        // TODO: navigate to recipes
+        axiosWithAuth().post(`https://tt75-recipes.herokuapp.com/api/auth/login`, info)
+          .then((res) => {
+            localStorage.setItem('token', JSON.stringify(res.data.token));
+            history.push('/');
+          })
+          .catch((err) => console.log(err));
       })
-      .catch((err) => {
-        console.log(err);
-      });
+      .catch((err) => console.log(err));
   };
 
   return (
@@ -40,30 +40,6 @@ export default function Signup() {
       <br></br>
 
       <form onSubmit={onSubmit}>
-        <label>
-          Name
-          <br></br>
-          <input
-            name="name"
-            type="text"
-            value={info.name}
-            onChange={onChange}
-            placeholder="Name..."
-          />
-        </label>
-
-        <label>
-          Phone
-          <br></br>
-          <input
-            name="phone"
-            type="text"
-            value={info.phone}
-            onChange={onChange}
-            placeholder="Phone..."
-          />
-        </label>
-
         <label>
           Username
           <br></br>
