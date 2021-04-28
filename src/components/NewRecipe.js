@@ -10,16 +10,6 @@ const NewRecipe = () => {
     /// INITIAL STATE VALUES///
     /// INITIAL STATE VALUES///
 
-    const initialRecipe = {
-        title: '',
-        source: '',
-        category: '',
-        directions: '',
-        ingredients: [{ingredient: '',
-        measurement: '',
-        }]
-    }
-
     const initialForm = {
         title: '',
         source: '',
@@ -33,22 +23,21 @@ const NewRecipe = () => {
         source: '',
         category: '',
         directions: '',
-        ingredients: [{ingredient: '',
-        measurement: '',
-        }]
+        ingredients: [],
     }
 
     const initialDisabled = true;
 
-    const initialIngredientList = [];
 
     /// STATES ///
     /// STATES ///
     /// STATES ///
 
-    const [recipe, setRecipe] = useState(initialRecipe);
     const [formValues, setFormValues] = useState(initialForm);
-    const [ingredientList, setIngredientList] = useState(initialIngredientList);
+    const [ingValue, setIngValue] = useState({
+        ingredient: "",
+        measurement: ""
+    });
     const [formErrors, setFormErrors] = useState(initialFormErrors);
     const [disabled, setDisabled] = useState(initialDisabled);
 
@@ -68,11 +57,11 @@ const NewRecipe = () => {
                 source: formValues.source,
                 category: formValues.category,
                 directions: formValues.directions,
-                ingredients: ingredientList,
+                ingredients: formValues.ingredients,
         }
 
-        setRecipe(newRecipe);
         setFormValues(initialForm);
+
     }
 
     /// CHANGE FUNCTION ///
@@ -98,17 +87,33 @@ const NewRecipe = () => {
         setFormValues({...formValues, [name]: value})
     }
 
-    const addIngredient = (evt) => {
+    /// CHANGE INGREDIENT FUNCTION ///
+    /// CHANGE INGREDIENT FUNCTION ///
+    /// CHANGE INGREDIENT FUNCTION ///
+
+    const ingChange = (evt) => {
+        const {name, value} = evt.target;
+
+        setIngValue({...ingValue, [name]: value})
+    }
+
+    /// ADD INGREDIENT FUNCTION ///
+    /// ADD INGREDIENT FUNCTION ///
+    /// ADD INGREDIENT FUNCTION ///
+
+    const addIng = (evt) => {
         evt.preventDefault()
 
-        const newIngredient = {
-            ingredient: formValues.ingredients[0].ingredient,
-            measurement: formValues.ingredients[0].measurement,
-        }
+        setFormValues({...formValues, ingredients : [...formValues.ingredients , `${ingValue.measurement} ${ingValue.ingredient}`]})
+        setIngValue({measurement: "", ingredient: ""})
+    }
 
-        setIngredientList(...ingredientList, newIngredient)
+    /// REMOVE INGREDIENT FUNCTION ///
+    /// REMOVE INGREDIENT FUNCTION ///
+    /// REMOVE INGREDIENT FUNCTION ///
 
-        setFormValues(...formValues, formValues.ingredients[0].ingredient="", formValues.ingredients[0].measurement="", ) ///HELPHELPHELPHELPHELP CAN'T RESET INDIVIDUAL FORM ITEMS TO EMPTY STRING ON BUTTON CLICK///
+    const removeIng = (evt) => {
+
     }
 
     /// SIDE EFFECTS ///
@@ -116,7 +121,6 @@ const NewRecipe = () => {
     /// SIDE EFFECTS ///
 
     useEffect(() => {
-        console.log(formValues)
         Schema.isValid(formValues).then(valid => {
             setDisabled(!valid)
         })
@@ -154,8 +158,7 @@ return (
     <div>{formErrors.title}</div>
     <div>{formErrors.source}</div>
     <div>{formErrors.category}</div>
-    <div>{formErrors.ingredients[0].ingredient}</div>
-    <div>{formErrors.ingredients[0].measurement}</div>
+    <div>{formErrors.ingredients}</div>
     <div>{formErrors.directions}</div>
     </div>
 
@@ -197,12 +200,18 @@ return (
     {/* INGREDIENT BELOW*/}
     {/* INGREDIENT BELOW*/}
 
+    <div>
+        {formValues.ingredients.forEach(ingredient=> {
+            <div> <span > (x) </span> <span> {ingredient} </span></div>
+        })}
+    </div>
+
     <input
     placeholder="Ingredient..."
     name="ingredient"
     type="text"
-    value={formValues.ingredients[0].ingredient}
-    onChange={change}
+    value={ingValue.ingredient}
+    onChange={ingChange}
     />
 
     {/* MEASUREMENT BELOW*/}
@@ -213,11 +222,11 @@ return (
     placeholder="Measurement..."
     name="measurement"
     type="text"
-    value={formValues.ingredients[0].measurement}
-    onChange={change}
+    value={ingValue.measurement}
+    onChange={ingChange}
     />
 
-    <button onClick={addIngredient}>ADD</button>
+    <button onClick={addIng}>ADD</button>
 
     {/* DIRECTIONS BELOW*/}
     {/* DIRECTIONS BELOW*/}

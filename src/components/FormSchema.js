@@ -17,15 +17,10 @@ export default yup.object().shape({
     .required("A Category is required!")
     .min(1, "Your category must be at least one character long"),
 
-    ingredient: yup
-    .string()
-    .required("Ingredients are required!")
-    .min(1, "Your ingredient must be at least one character long"),
-
-    measurement: yup
-    .string()
-    .required("A Measurement is required!")
-    .min(1, "Your measurement must be at least one character long"),
+    ingredients: yup
+    .array()
+    .required("An ingredient is required!")
+    .min(1, "You must have at least one ingredient"),
 
     directions: yup
     .string()
