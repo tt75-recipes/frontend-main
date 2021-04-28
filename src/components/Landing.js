@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import '../styles/landing.css';
-import { ReactComponent as Logo_Large } from '../images/logo_Large.svg'
+import { ReactComponent as LogoLarge } from '../images/logo_Large.svg'
+import { axiosWithAuth } from '../axiosWithAuth.js';
 
 export default function Landing() {
   const [tokenExists, setTokenExists] = useState(false);
@@ -16,15 +16,15 @@ export default function Landing() {
   })
 
   useEffect(() => {
-    const token = window.localStorage.getItem('token');
+    const token = localStorage.getItem('token');
     if (token) setTokenExists(true);
     (token && console.log(JSON.parse(token)));
 
     if (token) {
-      axios.get('https://tt75-recipes.herokuapp.com/api/categories')
+      axiosWithAuth().get('https://tt75-recipes.herokuapp.com/api/categories')
         .then(res => setCategories(res.data))
         .catch(err => console.log(err))
-      axios.get('https://tt75-recipes.herokuapp.com/api/recipes')
+      axiosWithAuth().get('https://tt75-recipes.herokuapp.com/api/recipes')
         .then(res => setRecipes(res.data))
         .catch(err => console.log(err))
     }
@@ -37,7 +37,7 @@ export default function Landing() {
     return (
       <div className='landing'>
         <div style={{height:'200px', width: '500px', margin: 'auto'}} >
-          <Logo_Large />
+          <LogoLarge />
         </div>
         <div className='container-search-recipes'>
           <aside className='searchbar'>
