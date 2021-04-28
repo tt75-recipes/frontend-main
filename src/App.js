@@ -20,7 +20,10 @@ function App() {
           </Route>
           <Route path='/signup'>
             <Signup />
-            </Route>
+          </Route>
+          <Route path='/newRecipe'>
+            {/* newRecipe component here */}
+          </Route>
           {/* testing */}
           <Route path='/nav'>
             <NavBar />
