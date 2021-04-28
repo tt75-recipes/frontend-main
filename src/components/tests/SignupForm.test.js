@@ -1,18 +1,17 @@
 // author: nora-exe
 
-//TODO Tasks
-/**
- * On-boarding process for a new user:
+//* Tasks
+/** On-boarding process for a new user:
  * Can type in text areas
  * cant submit without whole form filled
  * can submit with forms filled
- */
+*/
 
 //TODO Backlog
 /**
  * renders error message if username already taken
  * 
- */
+*/
 
 import React from 'react';
 import { render, screen } from '@testing-library/react';
