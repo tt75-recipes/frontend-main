@@ -23,14 +23,11 @@ function App() {
             <Signup />
           </Route>
           <Route path='/newRecipe'>
-            {/* newRecipe component here */}
+          <NewRecipe />
           </Route>
           {/* testing */}
           <Route path='/nav'>
             <NavBar />
-          </Route>
-          <Route path='/new-recipe'>
-            <NewRecipe />
           </Route>
         </Switch>
       </Router>
