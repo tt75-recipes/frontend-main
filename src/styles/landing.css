@@ -1,0 +1,8 @@
+.landing {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-search-recipes {
+  display: flex;
+}

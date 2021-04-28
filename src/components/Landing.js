@@ -1,22 +1,89 @@
-import React from 'react';
-
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import '../styles/landing.css';
 import { ReactComponent as Logo_Large } from '../images/logo_Large.svg'
 
 export default function Landing() {
+  const [tokenExists, setTokenExists] = useState(false);
+  const [categories, setCategories] = useState([]);
+  const [recipes, setRecipes] = useState([]);
+  const [search, setSearch] = useState('');
+  const [radio, setRadio] = useState('');
 
-  return(
-    <>
+  const filteredRecipes = recipes.filter(recipe => {
+    if (recipe.title.toLowerCase().includes(search.toLowerCase())) return true;
+    return false;
+  })
+
+  useEffect(() => {
+    const token = window.localStorage.getItem('token');
+    if (token) setTokenExists(true);
+    (token && console.log(JSON.parse(token)));
+
+    if (token) {
+      axios.get('https://tt75-recipes.herokuapp.com/api/categories')
+        .then(res => setCategories(res.data))
+        .catch(err => console.log(err))
+      axios.get('https://tt75-recipes.herokuapp.com/api/recipes')
+        .then(res => setRecipes(res.data))
+        .catch(err => console.log(err))
+    }
+  }, [])
+
+  const handleSearch = e => setSearch({ ...search, [e.target.name]: e.target.value });
+  const handleRadio = e => setRadio({ ...radio, [e.target.name]: e.target.value });
+
+  if (tokenExists) {
+    return (
       <div className='landing'>
-        {/* <h2 className='josefin'>Secret Family</h2><h1>Recipes</h1> */}
         <div style={{height:'200px', width: '500px', margin: 'auto'}} >
           <Logo_Large />
         </div>
-      </div>
-        <div className='landing-links'>
-          <a href='/signup'>Sign Up</a>
-          <a href='/login'>Login</a>
+        <div className='container-search-recipes'>
+          <aside className='searchbar'>
+            <input onChange={handleSearch}
+              name='search'
+              value={search}
+              placeholder='search'
+              spellCheck='false'
+              autoComplete='off'
+            />
+            <div onChange={handleRadio}>
+              {
+                categories.map(category => {
+                  return (
+                    <label>{category}
+                    <input type='radio' value={category} name='radio-categories' />
+                    </label>
+                  )
+                })
+              }
+            </div>
+          </aside>
+          <main className='recipelist'>
+            {
+              filteredRecipes.map(recipe => {
+                return (
+                  <div className='recipe-card'>
+                    <h2>Title:</h2> <p>{recipe.title}</p>
+                  </div>
+                )
+              })
+            }
+          </main>
         </div>
-    </>
-  );
-
+      </div>
+    )
+  }
+  else {
+    return(
+      <div className='landing'>
+        <h1>Secret Family Recipes</h1>
+        <nav className='landing-links'>
+          <a href='/register'>Register</a>
+          <a href='/login'>Login</a>
+        </nav>
+      </div>
+    )
+  }
 }
