@@ -6,6 +6,7 @@ import Login from './components/Login';
 import Signup from './components/SignUp'
 import NavBar from './components/NavBar';
 import './App.css';
+import NewRecipe from './components/NewRecipe';
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
           {/* testing */}
           <Route path='/nav'>
             <NavBar />
+          </Route>
+          <Route path='/new-recipe'>
+            <NewRecipe />
           </Route>
         </Switch>
       </Router>

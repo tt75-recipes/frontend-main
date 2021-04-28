@@ -1,10 +1,13 @@
 import React, {useState, useEffect} from "react";
+import {useHistory} from "react-router-dom";
 import axios from "axios";
 import * as yup from "yup";
 import Schema from "./FormSchema";
 
 
 const NewRecipe = () => {
+
+    const history = useHistory();
 
     /// INITIAL STATE VALUES///
     /// INITIAL STATE VALUES///
@@ -53,15 +56,16 @@ const NewRecipe = () => {
         evt.preventDefault()
 
         const newRecipe = {
-                title: formValues.title,
-                source: formValues.source,
-                category: formValues.category,
-                directions: formValues.directions,
+                title: formValues.title.trim(),
+                source: formValues.source.trim(),
+                category: formValues.category.trim(),
+                directions: formValues.directions.trim(),
                 ingredients: formValues.ingredients,
         }
 
         setFormValues(initialForm);
 
+        history.push('/')
     }
 
     /// CHANGE FUNCTION ///
@@ -112,8 +116,17 @@ const NewRecipe = () => {
     /// REMOVE INGREDIENT FUNCTION ///
     /// REMOVE INGREDIENT FUNCTION ///
 
-    const removeIng = (evt) => {
+    const removeIng = (index) => {
+        formValues.ingredients.splice(index, 1)
+    }
 
+    /// HOMEPAGE FUNCTION ///
+    /// HOMEPAGE FUNCTION ///
+    /// HOMEPAGE FUNCTION ///
+
+    const goHome = (evt) => {
+        evt.preventDefault()
+        history.push('/')
     }
 
     /// SIDE EFFECTS ///
@@ -135,6 +148,10 @@ const NewRecipe = () => {
 return (
     <>
     <form onSubmit={submit}>
+
+    <button onClick={goHome}>
+        X
+    </button>
 
     {/* SOURCE BELOW*/}
     {/* SOURCE BELOW*/}
@@ -201,8 +218,8 @@ return (
     {/* INGREDIENT BELOW*/}
 
     <div>
-        {formValues.ingredients.forEach(ingredient=> {
-            <div> <span > (x) </span> <span> {ingredient} </span></div>
+        {formValues.ingredients.forEach((ingredient, index)=> {
+            <div> <span onClick={removeIng(index)}> (x) </span> <span> {ingredient} </span> </div>
         })}
     </div>
 
