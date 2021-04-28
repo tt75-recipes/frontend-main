@@ -27,7 +27,7 @@ test("can type in text areas", () => {
 })  
 
 // Test 2. Can't submit without whole form filled
-test("submit button disabled if at least 1 field is empty", () => {
+test("submit button is disabled if at least 1 field is empty", () => {
     render(<SignupForm />)
     expect(screen.getByRole('button')).toBeDisabled()
 })

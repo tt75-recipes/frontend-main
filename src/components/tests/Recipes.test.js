@@ -9,6 +9,7 @@ import { render } from "react-dom"
 
 //TODO Backlog
 /**
+ * do we want to test if an added recipe renders?
  * Search `recipes` by `title` or tagged `categories`
  * 
 */
