@@ -1,52 +1,70 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { axiosWithAuth } from '../axiosWithAuth.js';
+import { axiosWithAuth } from "../axiosWithAuth.js";
+// import styled from "styled-components";
+import {
+  Section,
+  H1,
+  Form,
+  Label,
+  Input,
+  Button,
+} from "./Styling";
 
 export default function Login() {
   const history = useHistory();
-  const [credentials, setCredentials] = useState({ username: '', password: '' })
+  const [credentials, setCredentials] = useState({
+    username: "",
+    password: "",
+  });
 
-  const handleChange = e => setCredentials({ ...credentials, [e.target.name]: e.target.value });
+  const handleChange = (e) =>
+    setCredentials({ ...credentials, [e.target.name]: e.target.value });
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    axiosWithAuth().post(`https://tt75-recipes.herokuapp.com/api/auth/login`, credentials)
+    axiosWithAuth()
+      .post(`https://tt75-recipes.herokuapp.com/api/auth/login`, credentials)
       .then((res) => {
-        window.localStorage.setItem('token', JSON.stringify(res.data.token));
-        history.push('/');
+        window.localStorage.setItem("token", JSON.stringify(res.data.token));
+        history.push("/");
       })
       .catch((err) => {
         console.log(err);
-      })
-  }
+      });
+  };
 
-  return(
-    <div className="login">
-      <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
+  return (
+    <Section>
+      <H1>Login</H1>
+      <Form onSubmit={handleSubmit}>
         <>
-          <label>Username:</label>
-          <input 
+          <Label>Username:</Label>
+          <Input
             type="text"
             name="username"
             value={credentials.username}
             onChange={handleChange}
-            spellCheck='false'
-            autoComplete='off'
+            spellCheck="false"
+            autoComplete="off"
+            placeholder="Username..."
           />
         </>
         <>
-          <label>Password:</label>
-          <input 
+          <Label>Password:</Label>
+          <Input
             type="password"
             name="password"
             value={credentials.password}
             onChange={handleChange}
+            placeholder="Password..."
           />
         </>
-        <button>Login</button>
-      </form>
-      <p>Don't have an account? <a href="/register">Register</a></p>
-    </div>
+        <Button>Login</Button>
+      </Form>
+      <p>
+        Don't have an account? <a href="/signup">Signup</a>
+      </p>
+    </Section>
   );
 }
