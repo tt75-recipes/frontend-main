@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 // Signup and Login
 export const Section = styled.section`
@@ -81,7 +82,7 @@ export const NavSection = styled.section`
   text-decoration: bold;
 `;
 
-export const NavA = styled.a`
+export const NavA = styled.NavLink`
   display: flex;
   flex-direction: row;
   color: #8586a5;
@@ -101,7 +102,7 @@ export const LogoutSection = styled.section`
   padding-right: 30px;
 `;
 
-export const LogoutA = styled.a`
+export const LogoutA = styled.NavLink`
   background-color: #8586a5;
   color: white;
   height: 30px;
