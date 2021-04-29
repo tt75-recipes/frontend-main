@@ -6,6 +6,7 @@ import Login from './components/Login';
 import Signup from './components/SignUp'
 import NavBar from './components/NavBar';
 import './App.css';
+import NewRecipe from './components/NewRecipe';
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
             <Signup />
           </Route>
           <Route path='/newRecipe'>
-            {/* newRecipe component here */}
+          <NewRecipe />
           </Route>
           {/* testing */}
           <Route path='/nav'>
