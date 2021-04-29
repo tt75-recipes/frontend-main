@@ -91,11 +91,14 @@ time, mark, audio, video {
     display: flex;
 
   }
-  .ingredientsAndDescriptions h2 {
-      margin: 10%;
-  }
-
-
-  border-left: solid <color> 2px;
-display: flex;
-flex-flow: column-wrap
+ 
+  .ingredients, .directions {
+    font-family: "Josefin Slab", serif;
+    height: 10%;
+    margin-left: 35%;
+    padding: 1%;
+    border-left: solid #8383a3 3px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}

@@ -6,18 +6,16 @@ import { axiosWithAuth } from '../axiosWithAuth.js'
 
 
 export default function Recipe(props) {
-//   const  { ingredients, directions } = props
+
   const [ingredients, setIngredients] = useState([])
   const [directions, setDirections] = useState("")
 
     let id = useParams().id
-    console.log(useParams());
-
+    
 useEffect(() => {
-
-    axiosWithAuth().get(`https://tt75-recipes.herokuapp.com/api/recipes/${id}`)
-        .then(res => {
-          // setRecipes(res.data)
+    axiosWithAuth()
+      .get(`https://tt75-recipes.herokuapp.com/api/recipes/${id}`)
+      .then(res => {
           setIngredients(res.data.ingredients)
           setDirections(res.data.instructions)
         console.log(res);
@@ -25,19 +23,6 @@ useEffect(() => {
         .catch(err => console.log(err));
     },[id])
  
-  
-  
-  
-  function getIngredients() {
-        setIngredients(ingredients.map(ingredient => {
-            return (<span>{`${ingredient.name} ${ingredient.mesurements}`} </span>) 
-
-            console.log(ingredient.name);
-        }))
-    };
-    
-
-
 
   return(
     <div className='recipe'>
@@ -45,24 +30,28 @@ useEffect(() => {
         <h1>Recipe Title</h1>
         <div style={{height:'100px', width: '150px', margin: '0px 80px'}}>
         < BorderPattern/>
-      </div>
-            
-           
-            <div className="button1">
+        </div>
+                 
+      <div className="button1">
                 {/* TO add on edit function */}
-                <button onClick={event =>{} }>Edit</button> <br/>
-                <br/>
-                <button onClick={() => props.onDelete(props.id) }>Delete</button>
-                                       
-            </div>
-            <div className="ingredientsAndDescriptions">
-                    <h2>Ingredients</h2>
-                    <br/>
-                    {ingredients.map((ingredient) => 
-                    {return <span>{`${ingredient.measurement } ${ingredient.name} ` } </span>}) }           
-                    <h2>Directions</h2>
-                        <p>{directions}</p>
-            </div>
+          <button onClick={event =>{} }>Edit</button> <br/>
+              <br/>
+              {/* to add delete function */}
+          <button onClick={() => props.onDelete(props.id) }>Delete</button>
+      </div>          
+            
+        <br/><br/><br/>
+
+      <h2>Ingredients</h2>
+        <div className="ingredients">
+            {ingredients.map((ingredient) => 
+            {return <span>{`${ingredient.measurement } ${ingredient.name} ` } </span>}) } 
+        </div>
+
+      <h2>Directions</h2>
+         <div className="directions">
+              <p>{directions}</p>
+          </div>
      </div>
     </div>
   );
