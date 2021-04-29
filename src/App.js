@@ -5,6 +5,7 @@ import Landing from './components/Landing';
 import Login from './components/Login';
 import Signup from './components/SignUp'
 import NavBar from './components/NavBar';
+import Recipe from './components/Recipe'
 import './App.css';
 
 function App() {
@@ -20,6 +21,9 @@ function App() {
           </Route>
           <Route path='/signup'>
             <Signup />
+          </Route>
+          <Route path='/recipe'>
+            <Recipe />
           </Route>
           <Route path='/newRecipe'>
             {/* newRecipe component here */}
