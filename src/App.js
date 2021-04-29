@@ -5,6 +5,7 @@ import Landing from './components/Landing';
 import Login from './components/Login';
 import Signup from './components/SignUp'
 import NavBar from './components/NavBar';
+import Recipe from './components/Recipe'
 import './App.css';
 import NewRecipe from './components/NewRecipe';
 
@@ -21,6 +22,9 @@ function App() {
           </Route>
           <Route path='/signup'>
             <Signup />
+          </Route>
+          <Route path='/recipe/:id'>
+            <Recipe />
           </Route>
           <Route path='/newRecipe'>
           <NewRecipe />
