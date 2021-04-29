@@ -93,7 +93,7 @@ export default function Landing() {
       <div className='landing'>
         <h1>Secret Family Recipes</h1>
         <nav className='landing-links'>
-          <a href='/register'>Register</a>
+          <a href='/signup'>Signup</a>
           <a href='/login'>Login</a>
         </nav>
       </div>

@@ -1,20 +1,20 @@
-import { ReactComponent as LogoNav } from '../images/logo_Nav.svg'
+import { ReactComponent as LogoNav } from "../images/logo_Nav.svg";
+// import styled from "styled-components";
+import { NavSection, NavA, LogoutSection, LogoutA } from "./Styling"
 
-export default function NavBar(){
-
-
+export default function NavBar() {
   return (
-    <div className='navbar' >
-      <div style={{height:'100px', width: '150px', margin: '0px 80px'}}>
+    <NavSection>
+      <div style={{ height: "100px", width: "150px", margin: "0px 80px" }}>
         <LogoNav />
       </div>
-      <div className='navbar'>
-        <a href='/profile'>Profile</a>
-        <a href='/recipes'>Recipes</a>
-        <div className='logout'>
-          <a href='/logout'>Logout</a>
-        </div>
-      </div>
-    </div>
-  )
+      <NavSection>
+        <NavA href="/profile">Profile</NavA>
+        <NavA href="/recipes">Recipes</NavA>
+        <LogoutSection className="logout">
+          <LogoutA href="/logout">Logout</LogoutA>
+        </LogoutSection>
+      </NavSection>
+    </NavSection>
+  );
 }

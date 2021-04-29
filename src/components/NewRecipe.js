@@ -3,6 +3,15 @@ import {useHistory} from "react-router-dom";
 import axios from "axios";
 import * as yup from "yup";
 import Schema from "./FormSchema";
+import {axiosWithAuth} from "../axiosWithAuth";
+
+
+/// TO DO ///               Add submit button functionality (post to api, etc)
+/// TO DO ///               Display ingredient list in UI with ability to remove an ingredient via an x button next to individual ingredient
+/// TO DO ///               Add CSS to entire component
+/// TO DO ///               
+/// TO DO ///
+/// TO DO ///
 
 
 const NewRecipe = () => {
@@ -43,6 +52,7 @@ const NewRecipe = () => {
     });
     const [formErrors, setFormErrors] = useState(initialFormErrors);
     const [disabled, setDisabled] = useState(initialDisabled);
+    const [ingredientList, setIngredientList] = useState([]);
 
     ///FUNCTIONS///
     ///FUNCTIONS///
@@ -58,14 +68,23 @@ const NewRecipe = () => {
         const newRecipe = {
                 title: formValues.title.trim(),
                 source: formValues.source.trim(),
-                category: formValues.category.trim(),
-                directions: formValues.directions.trim(),
+                instructions: formValues.directions.trim(),
                 ingredients: formValues.ingredients,
+                category: formValues.category.trim(),
         }
+
+        axiosWithAuth()
+        .post("https://tt75-recipes.herokuapp.com/api/recipes/", newRecipe)
+        .then((res) => {
+            console.log(res)
+        })
+        .catch((err) => {
+            console.log(err);
+        })
 
         setFormValues(initialForm);
 
-        history.push('/')
+         history.push('/')
     }
 
     /// CHANGE FUNCTION ///
@@ -108,16 +127,28 @@ const NewRecipe = () => {
     const addIng = (evt) => {
         evt.preventDefault()
 
-        setFormValues({...formValues, ingredients : [...formValues.ingredients , `${ingValue.measurement} ${ingValue.ingredient}`]})
+        setFormValues({...formValues, ingredients : [...formValues.ingredients , {measurement: ingValue.measurement, ingredient: ingValue.ingredient}]})
+        setIngredientList([...ingredientList, `${ingValue.measurement} ${ingValue.ingredient}`])
         setIngValue({measurement: "", ingredient: ""})
     }
 
     /// REMOVE INGREDIENT FUNCTION ///
     /// REMOVE INGREDIENT FUNCTION ///
     /// REMOVE INGREDIENT FUNCTION ///
+    
+    const removeIng = (i) => {
 
-    const removeIng = (index) => {
-        formValues.ingredients.splice(index, 1)
+        const newIngredientList = [];
+
+        ingredientList.forEach((ingredient, index) => {
+            
+            if (index !== i) {
+               newIngredientList.push(ingredient);
+            }
+
+        })
+
+        setIngredientList(newIngredientList);
     }
 
     /// HOMEPAGE FUNCTION ///
@@ -207,22 +238,19 @@ return (
     onChange={change}
     />
 
-    {/* INGREDIENTS LABEL BELOW*/}
-    {/* INGREDIENTS LABEL BELOW*/}
-    {/* INGREDIENTS LABEL BELOW*/}
-
-    <label htmlFor="ingredient" htmlFor="measurement">Ingredients</label>   
 
     {/* INGREDIENT BELOW*/}
     {/* INGREDIENT BELOW*/}
     {/* INGREDIENT BELOW*/}
 
     <div>
-        {formValues.ingredients.forEach((ingredient, index)=> {
-            <div> <span onClick={removeIng(index)}> (x) </span> <span> {ingredient} </span> </div>
+        {ingredientList.map((ingredient, index)=> {
+            return <div key={index}> <span onClick={() => removeIng(index)}> (x) </span> <span> {ingredient} </span> </div>
         })}
     </div>
 
+        <fieldset>
+        <legend> Ingredients </legend>
     <input
     placeholder="Ingredient..."
     name="ingredient"
@@ -242,6 +270,8 @@ return (
     value={ingValue.measurement}
     onChange={ingChange}
     />
+  
+    </fieldset>
 
     <button onClick={addIng}>ADD</button>
 
