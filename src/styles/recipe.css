@@ -94,3 +94,8 @@ time, mark, audio, video {
   .ingredientsAndDescriptions h2 {
       margin: 10%;
   }
+
+
+  border-left: solid <color> 2px;
+display: flex;
+flex-flow: column-wrap
