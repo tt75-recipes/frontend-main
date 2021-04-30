@@ -50,7 +50,7 @@ export default function Landing() {
         </div>
         <div className='container-search-recipes'>
           <aside className='searchbar'>
-            <button className='new-recipe-button' onClick={() => history.push('/api/recipes/newRecipe')}>Add Recipe</button>
+            <button className='new-recipe-button' onClick={() => history.push('/newRecipe')}>Add Recipe</button>
             <input id='searchtext' onChange={handleSearch}
               name='text'
               value={search.text}
@@ -77,7 +77,7 @@ export default function Landing() {
             {
               filteredRecipes.map((recipe, index) => {
                 return (
-                  <div key={index} className='recipe-card' onClick={() => history.push(`/api/recipes/${recipe.recipe_id}`)}>
+                  <div key={index} className='recipe-card' onClick={() => history.push(`/recipe/${recipe.recipe_id}`)}>
                     <h2>{recipe.title}</h2>
                   </div>
                 )

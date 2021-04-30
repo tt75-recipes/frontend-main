@@ -5,8 +5,8 @@ import Schema from "./FormSchema";
 import {axiosWithAuth} from "../axiosWithAuth";
 
 
-/// TO DO ///               Add submit button functionality (post to api, etc)
-/// TO DO ///               Display ingredient list in UI with ability to remove an ingredient via an x button next to individual ingredient
+/// TO DO ///               
+/// TO DO ///               
 /// TO DO ///               Add CSS to entire component
 /// TO DO ///               
 /// TO DO ///
