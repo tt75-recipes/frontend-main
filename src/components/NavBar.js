@@ -1,6 +1,5 @@
 import { ReactComponent as LogoNav } from "../images/logo_Nav.svg";
-// import styled from "styled-components";
-import { NavSection, NavA, LogoutSection, LogoutA } from "./Styling"
+import { NavSection, NavA, LogoutSection, LogoutA } from "./Styling";
 
 export default function NavBar() {
   return (

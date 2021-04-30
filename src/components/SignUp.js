@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { axiosWithAuth } from "../axiosWithAuth.js";
 import { useHistory } from "react-router-dom";
-// import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 import { Section, H1, Form, Label, Input, Button } from "./Styling";
 
 const initialState = {
@@ -65,7 +65,7 @@ export default function Signup() {
       <br></br>
 
       <p>
-        Already have an account? <a href="/login"> Login </a>
+        Already have an account? <NavLink to="/login"> Login </NavLink>
       </p>
     </Section>
   );

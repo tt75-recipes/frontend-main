@@ -1,15 +1,9 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { axiosWithAuth } from "../axiosWithAuth.js";
+import { NavLink } from "react-router-dom";
 // import styled from "styled-components";
-import {
-  Section,
-  H1,
-  Form,
-  Label,
-  Input,
-  Button,
-} from "./Styling";
+import { Section, H1, Form, Label, Input, Button } from "./Styling";
 
 export default function Login() {
   const history = useHistory();
@@ -63,7 +57,7 @@ export default function Login() {
         <Button>Login</Button>
       </Form>
       <p>
-        Don't have an account? <a href="/signup">Signup</a>
+        Don't have an account? <NavLink to="/signup">Signup</NavLink>
       </p>
     </Section>
   );
