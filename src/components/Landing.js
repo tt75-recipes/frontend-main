@@ -65,7 +65,7 @@ export default function Landing() {
           <aside className="searchbar">
             <button
               className="new-recipe-button"
-              onClick={() => history.push("/api/recipes/newRecipe")}
+              onClick={() => history.push("/newRecipe")}
             >
               Add Recipe
             </button>
@@ -87,7 +87,7 @@ export default function Landing() {
               ></input>
               <label>none</label>
               {categories.map((category, index) => {
-                return (
+                return ( 
                   <div key={index} className="category-option">
                     <input
                       type="radio"
@@ -107,7 +107,7 @@ export default function Landing() {
                   key={index}
                   className="recipe-card"
                   onClick={() =>
-                    history.push(`/api/recipes/${recipe.recipe_id}`)
+                    history.push(`/recipe/${recipe.recipe_id}`)
                   }
                 >
                   <h2>{recipe.title}</h2>
